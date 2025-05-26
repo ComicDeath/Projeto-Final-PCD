@@ -1,1 +1,1 @@
-from gui import sequencia
+print("Bocchi The Rock!")
