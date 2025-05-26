@@ -5,7 +5,7 @@ janela.title("Plasmid Computer Decoder")
 janela.geometry("500x350")
 
 frameCnt = 9 
-frames = [tk.PhotoImage(file="C:/Users/joao25017/OneDrive - ILUM ESCOLA DE CIÊNCIA/Área de Trabalho/pcd_projeto/Projeto-Final-PCD/assets/12.gif", format=f"gif -index {i}") for i in range(frameCnt)]
+frames = [tk.PhotoImage(file="Projeto-Final-PCD/assets/12.gif", format=f"gif -index {i}") for i in range(frameCnt)]
 
 def gif(label, ind=0):
     frame = frames[ind]
