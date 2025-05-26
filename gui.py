@@ -1,4 +1,5 @@
 import tkinter as tk
+
 janela = tk.Tk()
 janela.title("Plasmid Computer Decoder")
 janela.geometry("500x350")
@@ -13,8 +14,10 @@ def gif(label, ind=0):
     label.image = frame
     janela.after(12, gif, label, ind)
 
-def capturaDados():
+def capturaDados(): 
     sequencia = entrada.get().strip().upper()
+    with open("Projeto-Final-PCD/assets/sequencia.txt", "w") as f:
+        f.write(sequencia)
     resultado.config(text=f"Sequência armazenada: {sequencia}")
 
 linha = tk.Frame(janela)

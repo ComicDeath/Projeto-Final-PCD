@@ -1,2 +1,1 @@
-import gui
-
+from gui import sequencia
