@@ -3,7 +3,6 @@ import tkinter as tk
 janela = tk.Tk()
 janela.title("Plasmid Computer Decoder")
 janela.geometry("500x350")
-
 frameCnt = 9 
 frames = [tk.PhotoImage(file="assets/12.gif", format=f"gif -index {i}") for i in range(frameCnt)]
 
