@@ -29,6 +29,20 @@ def carregaArquivo(entrada):
             entrada.delete(0, tk.END)
             entrada.insert(0, content)
     
+def gera_fita_complementar(sequencia):
+    complementares = {
+        'A' : 'T',
+        'T' : 'A',
+        'C' : 'G',
+        'G' : 'C',
+    }
+
+    fita_complementar = []
+
+    for base in sequencia:
+        fita_complementar.append(complementares[base])
+
+    return ''.join(fita_complementar)
 
 def calcular_gc(sequencia):
     gc = sequencia.count("G") + sequencia.count("C")
@@ -39,3 +53,4 @@ def Temperatura_Melting(sequencia):
     total = len(sequencia)
     melting = 64.9 + 41 * (gc- 16.4) / total
     return melting
+
