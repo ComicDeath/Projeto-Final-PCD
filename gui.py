@@ -1,9 +1,13 @@
 import tkinter as tk
-from main import capturaDados
+from main import capturaDados, carregaArquivo
 
 janela = tk.Tk()
 janela.title("Plasmid Computer Decoder")
-janela.geometry("500x350")
+janela.geometry("500x300")
+
+imagem_pasta = tk.PhotoImage(file="assets/folder_true.png")
+imagem_pasta = imagem_pasta.subsample(14, 14)
+
 frameCnt = 9 
 frames = [tk.PhotoImage(file="assets/12.gif", format=f"gif -index {i}") for i in range(frameCnt)]
 
@@ -13,7 +17,6 @@ def gif(label, ind=0):
     label.config(image=frame)
     label.image = frame
     janela.after(12, gif, label, ind)
-
 
 linha = tk.Frame(janela)
 linha.pack(pady=10)
@@ -29,8 +32,14 @@ label_gif_direita = tk.Label(linha)
 label_gif_direita.pack(side=tk.LEFT, padx=5)
 gif(label_gif_direita)
 
-entrada = tk.Entry(janela, font=("Arial", 14), justify="center")
-entrada.pack(pady=5)
+frame_da_entrada = tk.Frame(janela)
+frame_da_entrada.pack(pady=5)
+
+entrada = tk.Entry(frame_da_entrada, font=("Arial", 14), justify="center", width=30)
+entrada.pack(side=tk.LEFT)
+
+icone_pasta = tk.Button(frame_da_entrada, image=imagem_pasta, command=lambda: carregaArquivo(entrada))
+icone_pasta.pack(side=tk.LEFT, padx=5)
 
 botao = tk.Button(janela, text="Iniciar", command=lambda: capturaDados(entrada, resultado))
 botao.pack(pady=5)
