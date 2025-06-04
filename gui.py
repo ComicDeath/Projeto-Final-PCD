@@ -1,4 +1,5 @@
 import tkinter as tk
+from main import capturaDados
 
 janela = tk.Tk()
 janela.title("Plasmid Computer Decoder")
@@ -14,11 +15,6 @@ def gif(label, ind=0):
     label.image = frame
     janela.after(12, gif, label, ind)
 
-def capturaDados(): 
-    sequencia = entrada.get().strip().upper()
-    with open("assets/sequencia.txt", "w") as f:
-        f.write(sequencia)
-    resultado.config(text=f"Sequência armazenada: {sequencia}")
 
 linha = tk.Frame(janela)
 linha.pack(pady=10)
@@ -37,7 +33,7 @@ gif(label_gif_direita)
 entrada = tk.Entry(janela, font=("Arial", 14), justify="center")
 entrada.pack(pady=5)
 
-botao = tk.Button(janela, text="Iniciar", command=capturaDados)
+botao = tk.Button(janela, text="Iniciar", command=lambda: capturaDados(entrada, resultado))
 botao.pack(pady=5)
 
 resultado = tk.Label(janela, text="", font=("Arial", 12))
