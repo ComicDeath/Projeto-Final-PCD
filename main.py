@@ -31,9 +31,11 @@ def carregaArquivo(entrada):
     
 
 def calcular_gc(sequencia):
-    gc = sequencia_de_bases.count("G") + sequencia_de_bases.count("C")
+    gc = sequencia.count("G") + sequencia.count("C")
     return gc
 
 def Temperatura_Melting(sequencia):
-    melting = 64.9 + 41 * (gc - 16.4) / total
+    gc = calcular_gc(sequencia)
+    total = len(sequencia)
+    melting = 64.9 + 41 * (gc- 16.4) / total
     return melting
