@@ -36,3 +36,48 @@ genes_resistencia = {
     nptII : 'Kanamicina',
     cat : 'Clorafenicol',
 }
+
+codigo_genetico = {
+
+    'Fenilalamina' : ['UUU', 'UUC'],
+
+    'Leucina' : ['UUA', 'UUG', 'CUU', 'CUC', 'CUA', 'CUG'],
+
+    'Serina' : ['UCU', 'UCC', 'UCA','UCG', 'AGU', 'AGC'],
+
+    'Tirosina' : ['UAU', 'UAC'],
+
+    'Cisteína' : ['UGU', 'UGC'],
+
+    'Triptofano' : ['UGG'],
+
+    'Prolina' : ['CCU', 'CCC', 'CCA', 'CCG'],
+
+    'Histidina' : ['CAU', 'CAC'],
+
+    'Glutamina' : ['CAA', 'CAG'],
+
+    'Arginina' : ['CGU', 'CGA', 'CGG', 'CGC', 'AGA', 'AGG'],
+
+    'Isoleucina' : ['AUU', 'AUA', 'AUC'],
+
+    'Metionina' : ['AUG'],
+
+    'Treonina' : ['ACU', 'ACC', 'ACA', 'ACG'],
+
+    'Aspargina' : ['AAU', 'AAC'],
+
+    'Lisina' : ['AAA', 'AAG'],
+
+    'Valina' : ['GUU', 'GUC', 'GUA', 'GUG'],
+
+    'Alanina' : ['GCU', 'GCC', 'GCA', 'GCG'],
+
+    'Ácido aspártico' : ['GAU', 'GAC'],
+
+    'Ácido glutâmico' : ['GAA', 'GAG'],
+
+    'Glicina' : ['GCU', 'GCG', 'GGA', 'GGG'],
+
+    'STOP' : ['UAA', 'UAG', 'UGA']
+}
