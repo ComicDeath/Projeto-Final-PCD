@@ -39,45 +39,45 @@ genes_resistencia = {
 
 codigo_genetico = {
 
-    'Fenilalamina' : ['UUU', 'UUC'],
+    'Fenilalamina' : ['TTT', 'TTC'],
 
-    'Leucina' : ['UUA', 'UUG', 'CUU', 'CUC', 'CUA', 'CUG'],
+    'Leucina' : ['TTA', 'TTG', 'CTT', 'CTC', 'CTA', 'CTG'],
 
-    'Serina' : ['UCU', 'UCC', 'UCA','UCG', 'AGU', 'AGC'],
+    'Serina' : ['TCT', 'TCC', 'TCA','TCG', 'AGT', 'AGC'],
 
-    'Tirosina' : ['UAU', 'UAC'],
+    'Tirosina' : ['TAT', 'TAC'],
 
-    'Cisteína' : ['UGU', 'UGC'],
+    'Cisteína' : ['TGT', 'TGC'],
 
-    'Triptofano' : ['UGG'],
+    'Triptofano' : ['TGG'],
 
-    'Prolina' : ['CCU', 'CCC', 'CCA', 'CCG'],
+    'Prolina' : ['CCT', 'CCC', 'CCA', 'CCG'],
 
-    'Histidina' : ['CAU', 'CAC'],
+    'Histidina' : ['CAT', 'CAC'],
 
     'Glutamina' : ['CAA', 'CAG'],
 
-    'Arginina' : ['CGU', 'CGA', 'CGG', 'CGC', 'AGA', 'AGG'],
+    'Arginina' : ['CGT', 'CGA', 'CGG', 'CGC', 'AGA', 'AGG'],
 
-    'Isoleucina' : ['AUU', 'AUA', 'AUC'],
+    'Isoleucina' : ['ATT', 'ATA', 'ATC'],
 
-    'Metionina' : ['AUG'],
+    'Metionina' : ['ATG'],
 
-    'Treonina' : ['ACU', 'ACC', 'ACA', 'ACG'],
+    'Treonina' : ['ACT', 'ACC', 'ACA', 'ACG'],
 
-    'Aspargina' : ['AAU', 'AAC'],
+    'Aspargina' : ['AAT', 'AAC'],
 
     'Lisina' : ['AAA', 'AAG'],
 
-    'Valina' : ['GUU', 'GUC', 'GUA', 'GUG'],
+    'Valina' : ['GTT', 'GTC', 'GTA', 'GTG'],
 
-    'Alanina' : ['GCU', 'GCC', 'GCA', 'GCG'],
+    'Alanina' : ['GCT', 'GCC', 'GCA', 'GCG'],
 
-    'Ácido aspártico' : ['GAU', 'GAC'],
+    'Ácido aspártico' : ['GAT', 'GAC'],
 
     'Ácido glutâmico' : ['GAA', 'GAG'],
 
-    'Glicina' : ['GCU', 'GCG', 'GGA', 'GGG'],
+    'Glicina' : ['GCT', 'GCG', 'GGA', 'GGG'],
 
-    'STOP' : ['UAA', 'UAG', 'UGA']
+    'STOP' : ['TAA', 'TAG', 'TGA']
 }
