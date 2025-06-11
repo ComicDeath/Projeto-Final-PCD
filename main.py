@@ -27,6 +27,9 @@ def capturaDados(entrada, resultado):
             if letra not in bases_esperadas and letra not in bases_rna:
                 valido = False
                 break
+    
+    if "T" in sequencia_crua and "U" in sequencia_crua:
+        valido = False
 
     intervalo = 80
     pedacos = []
@@ -35,9 +38,16 @@ def capturaDados(entrada, resultado):
         sequencia_visualizacao = "\n".join(pedacos)
     
     if valido is True:
-        with open("assets/sequencia.txt", "w") as f:
-            f.write(sequencia_crua)
-            saida = f"Sequência armazenada: {sequencia_crua}"
+        if "U" in sequencia_crua:
+            sequencia_crua = sequencia_crua.replace("U", "T")
+            sequencia_visualizacao = sequencia_visualizacao.replace("U", "T")
+            with open("assets/sequencia.txt", "w") as f:
+                f.write(sequencia_crua)
+            saida = f"Sequência de RNA identificada e armazenada como sequência de DNA:\n {sequencia_visualizacao}"
+        else:
+            with open("assets/sequencia.txt", "w") as f:
+                f.write(sequencia_crua)
+            saida = f"Sequência de DNA armazenada:\n {sequencia_visualizacao}"
     else:
         with open("assets/sequencia.txt", "w") as f:
             f.write("")
