@@ -1,5 +1,5 @@
 import tkinter as tk
-from main import capturaDados, carregaArquivo, grafico_cg_at
+from main import capturaDados, carregaArquivo, grafico_cg_at, enzimas_de_restricao
 
 janela = tk.Tk()
 janela.title("Plasmid Computer Decoder")
@@ -45,8 +45,11 @@ icone_pasta.pack(side=tk.LEFT, padx=5)
 linha_botoes_1 = tk.Frame(janela)
 linha_botoes_1.pack(pady=10)
 
-botao_graficos = tk.Button(linha_botoes_1, text="Grafico", command=lambda: grafico_cg_at(entrada, resultado))
+botao_graficos = tk.Button(linha_botoes_1, text="Gráfico", command=lambda: grafico_cg_at(entrada, resultado))
 botao_graficos.pack(side=tk.LEFT, padx=10, pady=10)
+
+botao_enzima_de_restrição = tk.Button(linha_botoes_1, text="Enzima de restrição", command=lambda: enzimas_de_restricao(entrada, resultado) )
+botao_enzima_de_restrição.pack(side=tk.RIGHT, padx=10, pady=10)
 
 resultado = tk.Label(janela, text="", font=("Arial", 12))
 resultado.pack(pady=20)

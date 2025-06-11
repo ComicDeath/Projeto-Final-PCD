@@ -1,5 +1,6 @@
 import tkinter as tk
 import matplotlib.pyplot as plt
+import os
 from contagem_de_bases import calcular_gc, calcular_at
 from tkinter import filedialog
 from bibliotecas import enzimas
@@ -91,7 +92,10 @@ def Temperatura_Melting(sequencia):
     melting = 64.9 + 41 * (gc- 16.4) / total
     return melting
 
-def enzimas_de_restricao(sequencia):
+def enzimas_de_restricao(entrada, resultado):
+    capturaDados(entrada, resultado)
+    with open("assets\\enzima_de_restricao.txt", "w") as f:
+            f.write("")
     enzimas_restricao_presentes = {}
     enzimas_restricao_lista = []
     for nome_enzima, seq_enzima in enzimas.items():
@@ -103,7 +107,10 @@ def enzimas_de_restricao(sequencia):
     enzimas_restricao_tabela = "Enzima\tFrequência"
     for enzima, frequencia in enzimas_restricao_presentes.items():
         enzimas_restricao_tabela += f"\n{enzima}\t{frequencia}"
-    return enzimas_restricao_tabela
+
+    with open("assets\\enzima_de_restricao.txt", "w") as f:
+            f.write(enzimas_restricao_tabela)
+    os.startfile("assets\\enzima_de_restricao.txt")
 
 def grafico_cg_at(entrada, resultado): 
     capturaDados(entrada, resultado)

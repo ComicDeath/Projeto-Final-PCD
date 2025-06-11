@@ -1,0 +1,4 @@
+Enzima	Frequência
+HindIII	1
+PstI	1
+NcoI	4
