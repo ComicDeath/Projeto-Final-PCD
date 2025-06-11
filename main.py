@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import filedialog
+from bibliotecas import enzimas
 
 def capturaDados(entrada, resultado): 
     sequencia = entrada.get().strip().replace("\n","").replace(" ","").replace(",","").replace(".","").replace(";","").replace("?","").upper()
@@ -17,7 +18,7 @@ def capturaDados(entrada, resultado):
         saida = "Base inesperada identificada. Revise a sua sequência."
     resultado.config(text=saida)
 
-    #total = len(sequencia)
+    total = len(sequencia)
 
 def carregaArquivo(entrada):
     path = filedialog.askopenfilename(
@@ -64,4 +65,17 @@ def Temperatura_Melting(sequencia):
     melting = 64.9 + 41 * (gc- 16.4) / total
     return melting
 
+def enzimas_de_restricao(sequencia):
+    enzimas_restricao_presentes = {}
+    enzimas_restricao_lista = []
+    for nome_enzima, seq_enzima in enzimas.items():
+        if seq_enzima in sequencia:
+            enzimas_restricao_lista.append(nome_enzima)
+            if nome_enzima not in enzimas_restricao_presentes.keys():
+                enzimas_restricao_presentes[nome_enzima] = sequencia.count(seq_enzima)
+    # em tabela - fazer uma mais bonitinha?
+    enzimas_restricao_tabela = "Enzima\tFrequência"
+    for enzima, frequencia in enzimas_restricao_presentes.items():
+        enzimas_restricao_tabela += f"\n{enzima}\t{frequencia}"
+    return enzimas_restricao_tabela
 
