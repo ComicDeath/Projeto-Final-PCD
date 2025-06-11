@@ -102,7 +102,7 @@ def grafico_cg_at(sequencia):
     plt.title("Conteúdo GC vs AT")
     plt.show()
     
-def reconhece_proteinas(sequencia):
+def reconhece_codons(sequencia):
     stop_codons = ['TAA', 'TAG', 'TGA']
     traduzidos = {}
     for i in range(len(sequencia) - 2):
