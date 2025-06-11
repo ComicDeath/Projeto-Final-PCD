@@ -2,12 +2,22 @@ import tkinter as tk
 from tkinter import filedialog
 
 def capturaDados(entrada, resultado): 
-    sequencia = entrada.get().strip().upper()
-    with open("assets/sequencia.txt", "w") as f:
-        f.write(sequencia)
-    resultado.config(text=f"Sequência armazenada: {sequencia}")
+    sequencia = entrada.get().strip().replace("\n","").replace(" ","").replace(",","").replace(".","").replace(";","").replace("?","").upper()
+    valido = True
+    bases_esperadas = ["A","T","C","G"]
+    for letra in sequencia:
+        if letra not in bases_esperadas:
+            valido = False
+            break
+    if valido is True:
+        with open("assets/sequencia.txt", "w") as f:
+            f.write(sequencia)
+            saida = f"Sequência armazenada: {sequencia}"
+    else:
+        saida = "Base inesperada identificada. Revise a sua sequência."
+    resultado.config(text=saida)
 
-    total = len(sequencia)
+    #total = len(sequencia)
 
 def carregaArquivo(entrada):
     path = filedialog.askopenfilename(
@@ -53,4 +63,5 @@ def Temperatura_Melting(sequencia):
     total = len(sequencia)
     melting = 64.9 + 41 * (gc- 16.4) / total
     return melting
+
 
