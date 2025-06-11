@@ -19,14 +19,28 @@ def capturaDados(entrada, resultado):
     sequencia_crua = entrada.get().strip().replace("\n","").replace(" ","").replace(",","").replace(".","").replace(";","").replace("?","").upper()
     valido = True
     bases_esperadas = ["A","T","C","G"]
+    bases_rna = ["A", "U", "C", "G"]
     for letra in sequencia_crua:
-        if letra not in bases_esperadas:
+        if letra not in bases_esperadas and letra not in bases_rna:
             valido = False
             break
+    
+    intervalo = 80
+    pedacos = []
+    for i in range(0, len(sequencia_crua), intervalo):
+        pedacos.append(sequencia_crua[i:i+intervalo])
+        sequencia_visualizacao = "\n".join(pedacos)
+    
     if valido is True:
-        with open("assets/sequencia.txt", "w") as f:
-            f.write(sequencia_crua)
-            saida = f"Sequência armazenada: {sequencia_crua}"
+        if "U" in sequencia_crua:
+            sequencia_crua = sequencia_crua.replace("U", "T")
+            with open("assets/sequencia.txt", "w") as f:
+                f.write(sequencia_crua)
+            saida = f"Sequência de RNA identificada e armazenada como sequência de DNA:\n {sequencia_visualizacao}"
+        else:
+            with open("assets/sequencia.txt", "w") as f:
+                f.write(sequencia_crua)
+            saida = f"Sequência de DNA armazenada:\n {sequencia_visualizacao}"
     else:
         saida = "Base inesperada identificada. Revise a sua sequência."
     resultado.config(text=saida)
