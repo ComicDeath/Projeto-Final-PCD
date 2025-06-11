@@ -41,15 +41,12 @@ entrada.pack(side=tk.LEFT)
 icone_pasta = tk.Button(frame_da_entrada, image=imagem_pasta, command=lambda: carregaArquivo(entrada))
 icone_pasta.pack(side=tk.LEFT, padx=5)
 
-botao = tk.Button(janela, text="Iniciar", command=lambda: capturaDados(entrada, resultado))
-botao.pack(pady=5)
-
 #PRIMEIRA LINHA DE BOTOES
 
 linha_botoes_1 = tk.Frame(janela)
 linha_botoes_1.pack(pady=10)
 
-botao_graficos = tk.Button(linha_botoes_1, text="Grafico", command=lambda: grafico_cg_at(entrada.get()))
+botao_graficos = tk.Button(linha_botoes_1, text="Grafico", command=lambda: grafico_cg_at(entrada, resultado))
 botao_graficos.pack(side=tk.LEFT, padx=10, pady=10)
 
 resultado = tk.Label(janela, text="", font=("Arial", 12))

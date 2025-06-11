@@ -26,9 +26,15 @@ def capturaDados(entrada, resultado):
     if valido is True:
         with open("assets/sequencia.txt", "w") as f:
             f.write(sequencia_crua)
-            saida = f"Sequência armazenada: {sequencia_crua}"
+            saida = f"Sequência armazenada: {sequencia_crua}"            
     else:
-        saida = "Base inesperada identificada. Revise a sua sequência."
+        with open("assets/sequencia.txt", "w") as f:
+            f.write("")
+            saida = "Base inesperada identificada. Revise a sua sequência."
+            resultado.config(text=saida)
+            sequenciaVar("assets/sequencia.txt")
+            return "Erro"
+        
     resultado.config(text=saida)
 
     sequenciaVar("assets/sequencia.txt")
@@ -88,13 +94,16 @@ def enzimas_de_restricao(sequencia):
         enzimas_restricao_tabela += f"\n{enzima}\t{frequencia}"
     return enzimas_restricao_tabela
 
-def grafico_cg_at(sequencia): 
-    plt.close()
-    #rotulos
-    percentuais = [calcular_gc(sequencia), calcular_at(sequencia)]
-    pares = ["GC", "AT"]
+def grafico_cg_at(entrada, resultado): 
+    capturaDados(entrada, resultado)
+    if capturaDados(entrada, resultado) != "Erro":
+        plt.close()
+        
+        #rotulos
+        percentuais = [calcular_gc(sequencia), calcular_at(sequencia)]
+        pares = ["GC", "AT"]
 
-    #código do gráfico
-    plt.pie(percentuais, labels = pares, autopct = '%1.1f%%')
-    plt.title("Conteúdo GC vs AT")
-    plt.show()
+        #código do gráfico
+        plt.pie(percentuais, labels = pares, autopct = '%1.1f%%')
+        plt.title("Conteúdo GC vs AT")
+        plt.show()
