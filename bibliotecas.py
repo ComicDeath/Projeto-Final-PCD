@@ -46,6 +46,12 @@ genes_resistencia = {
     cat : 'Clorafenicol',
 }
 
+antibioticos = {
+    'bla': 'B-Lactamase',
+    'nptII': 'Kanamicina',
+    'cat': 'Clorafenicol',
+}
+
 codigo_genetico = {
 
     'Fenilalamina' : ['TTT', 'TTC'],
