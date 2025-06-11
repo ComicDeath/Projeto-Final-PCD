@@ -6,13 +6,20 @@ def capturaDados(entrada, resultado):
     sequencia = entrada.get().strip().replace("\n","").replace(" ","").replace(",","").replace(".","").replace(";","").replace("?","").upper()
     valido = True
     bases_esperadas = ["A","T","C","G"]
+    bases_rna = ["A", "U", "C", "G"]
     for letra in sequencia:
-        if letra not in bases_esperadas:
+        if (letra not in bases_esperadas) and (letra not in bases_rna):
             valido = False
             break
     if valido is True:
-        with open("assets/sequencia.txt", "w") as f:
-            f.write(sequencia)
+        if "U" in sequencia:
+            sequencia = sequencia.replace("U", "T")
+            with open("assets/sequencia.txt", "w") as f:
+                f.write(sequencia)
+            saida = f"Sequência de RNA identificada e convertida em sequência de DNA: {sequencia}"
+        else:
+            with open("assets/sequencia.txt", "w") as f:
+                f.write(sequencia)
             saida = f"Sequência armazenada: {sequencia}"
     else:
         saida = "Base inesperada identificada. Revise a sua sequência."
@@ -78,4 +85,3 @@ def enzimas_de_restricao(sequencia):
     for enzima, frequencia in enzimas_restricao_presentes.items():
         enzimas_restricao_tabela += f"\n{enzima}\t{frequencia}"
     return enzimas_restricao_tabela
-
