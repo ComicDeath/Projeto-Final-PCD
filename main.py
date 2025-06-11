@@ -2,7 +2,7 @@ import tkinter as tk
 import matplotlib.pyplot as plt
 from contagem_de_bases import calcular_gc, calcular_at
 from tkinter import filedialog
-from bibliotecas import enzimas
+from bibliotecas import enzimas, codigo_genetico
 
 #VAR GLOBAL DA SEQUENCIA (MEGA HIPER IMPORTANTE)
 sequencia = ""
