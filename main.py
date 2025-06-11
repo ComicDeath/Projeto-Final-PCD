@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 from contagem_de_bases import calcular_gc, calcular_at
 from tkinter import filedialog
-from bibliotecas import enzimas
+from bibliotecas import enzimas, codigo_genetico
 
 #VAR GLOBAL DA SEQUENCIA (MEGA HIPER IMPORTANTE)
 sequencia = ""
@@ -28,6 +28,9 @@ def capturaDados(entrada, resultado):
             if letra not in bases_esperadas and letra not in bases_rna:
                 valido = False
                 break
+    
+    if "T" in sequencia_crua and "U" in sequencia_crua:
+        valido = False
 
     intervalo = 80
     pedacos = []
@@ -36,9 +39,16 @@ def capturaDados(entrada, resultado):
         sequencia_visualizacao = "\n".join(pedacos)
     
     if valido is True:
-        with open("assets/sequencia.txt", "w") as f:
-            f.write(sequencia_crua)
-            saida = f"Sequência armazenada: {sequencia_crua}"
+        if "U" in sequencia_crua:
+            sequencia_crua = sequencia_crua.replace("U", "T")
+            sequencia_visualizacao = sequencia_visualizacao.replace("U", "T")
+            with open("assets/sequencia.txt", "w") as f:
+                f.write(sequencia_crua)
+            saida = f"Sequência de RNA identificada e armazenada como sequência de DNA:\n {sequencia_visualizacao}"
+        else:
+            with open("assets/sequencia.txt", "w") as f:
+                f.write(sequencia_crua)
+            saida = f"Sequência de DNA armazenada:\n {sequencia_visualizacao}"
     else:
         with open("assets/sequencia.txt", "w") as f:
             f.write("")
@@ -125,3 +135,67 @@ def grafico_cg_at(entrada, resultado):
         plt.pie(percentuais, labels = pares, autopct = '%1.1f%%')
         plt.title("Conteúdo GC vs AT")
         plt.show()
+
+def reconhece_proteinas(sequencia):
+    stop_codons = ['TAA', 'TAG', 'TGA']
+    traduzidos = {}
+
+    for i in range(len(sequencia) - 2):
+        if sequencia[i:i+3] == 'ATG':
+            codons = []
+            for j in range(i, len(sequencia) - 2, 3):
+                trinca = sequencia[j:j+3]
+                codons.append(trinca)
+                if trinca in stop_codons:
+                    traduzidos[i+1] = codons  
+                    break
+
+    # Traduzir códons para aminoácidos
+    proteinas = {}
+    for posicao, lista_codons in traduzidos.items():
+        prot = []
+        for trinca in lista_codons:
+            for aa, codons in codigo_genetico.items():
+                if trinca in codons:
+                    if aa == 'STOP':
+                        break
+                    prot.append(aa)
+                    break
+        proteinas[posicao] = prot
+
+    return proteinas
+
+from bibliotecas import antibioticos, genes_resistencia
+
+#Função para identificar os genes de resistencia e sua posição no genoma
+def identifica_genes_resistencia(sequencia_de_bases):
+
+    #O replace é para garantir que não terão espaos atrapalhando
+    sequencia_de_bases = sequencia_de_bases.replace('\n', '')
+    resultados = []
+
+    #O for navega pelos itens do gene_resistencia da biblioteca
+    for nome_gene, sequencia_gene in genes_resistencia.items():
+        posicao = sequencia_de_bases.find(sequencia_gene)
+
+        #O While para ele continuar identificando gene possíveis
+        while posicao != -1:
+            tamanho = len(sequencia_gene)
+            antibiotico = antibioticos[nome_gene]
+            resultados.append({
+                'gene': nome_gene,
+                'posicao': posicao,
+                'tamanho': tamanho,
+                'antibiotico': antibiotico
+            })
+
+            #Posição atualiza a variável para buscar o próximo gene de resistencia
+            posicao = sequencia_de_bases.find(sequencia_gene, posicao + 1)
+
+    # Testa se a lista resultados não está vazia indicando que um gene foi encontrado.
+    if resultados:
+        return resultados
+    
+    #Caso nenhum gene seja encontrado retorna a frase abaixo.
+    else:
+        return "No seu plasmídio não há genes de resistência"
