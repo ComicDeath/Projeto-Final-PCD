@@ -1,0 +1,3 @@
+Gene bla encontrado na posição 0, tamanho do gene de resistência: 424, antibiótico: Ampicilina 
+Gene nptII encontrado na posição 450, tamanho do gene de resistência: 454, antibiótico: Kanamicina 
+Gene cat encontrado na posição 921, tamanho do gene de resistência: 368, antibiótico: Clorafenicol 

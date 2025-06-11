@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 from contagem_de_bases import calcular_gc, calcular_at
 from tkinter import filedialog
-from bibliotecas import enzimas, codigo_genetico
+from bibliotecas import enzimas, codigo_genetico, antibioticos, genes_resistencia
 
 #VAR GLOBAL DA SEQUENCIA (MEGA HIPER IMPORTANTE)
 sequencia = ""
@@ -104,8 +104,6 @@ def Temperatura_Melting(sequencia):
 
 def enzimas_de_restricao(entrada, resultado):
     capturaDados(entrada, resultado)
-    with open("assets\\enzima_de_restricao.txt", "w") as f:
-            f.write("")
     enzimas_restricao_presentes = {}
     enzimas_restricao_lista = []
     for nome_enzima, seq_enzima in enzimas.items():
@@ -165,18 +163,15 @@ def reconhece_proteinas(sequencia):
 
     return proteinas
 
-from bibliotecas import antibioticos, genes_resistencia
-
 #Função para identificar os genes de resistencia e sua posição no genoma
-def identifica_genes_resistencia(sequencia_de_bases):
-
+def identifica_genes_resistencia(entrada, resultado):
+    capturaDados(entrada, resultado)
     #O replace é para garantir que não terão espaos atrapalhando
-    sequencia_de_bases = sequencia_de_bases.replace('\n', '')
     resultados = []
 
     #O for navega pelos itens do gene_resistencia da biblioteca
     for nome_gene, sequencia_gene in genes_resistencia.items():
-        posicao = sequencia_de_bases.find(sequencia_gene)
+        posicao = sequencia.find(sequencia_gene)
 
         #O While para ele continuar identificando gene possíveis
         while posicao != -1:
@@ -190,12 +185,16 @@ def identifica_genes_resistencia(sequencia_de_bases):
             })
 
             #Posição atualiza a variável para buscar o próximo gene de resistencia
-            posicao = sequencia_de_bases.find(sequencia_gene, posicao + 1)
+            posicao = sequencia.find(sequencia_gene, posicao + 1)
 
     # Testa se a lista resultados não está vazia indicando que um gene foi encontrado.
     if resultados:
-        return resultados
+        with open("assets\\gene_de_resistencia.txt", "w") as f:
+            for r in resultados:
+                f.write(f"Gene {r['gene']} encontrado na posição {r['posicao']}, tamanho do gene de resistência: {r['tamanho']}, antibiótico: {r['antibiotico']} \n")
+        os.startfile("assets\\gene_de_resistencia.txt")
     
     #Caso nenhum gene seja encontrado retorna a frase abaixo.
     else:
-        return "No seu plasmídio não há genes de resistência"
+        resultado.config(text="No seu plasmídio não há genes de resistência")
+    
