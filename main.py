@@ -73,6 +73,9 @@ def enzimas_de_restricao(sequencia):
             enzimas_restricao_lista.append(nome_enzima)
             if nome_enzima not in enzimas_restricao_presentes.keys():
                 enzimas_restricao_presentes[nome_enzima] = sequencia.count(seq_enzima)
-    #em tabela?
+    # em tabela - fazer uma mais bonitinha?
+    enzimas_restricao_tabela = "Enzima\tFrequência"
+    for enzima, frequencia in enzimas_restricao_presentes.items():
+        enzimas_restricao_tabela += f"\n{enzima}\t{frequencia}"
+    return enzimas_restricao_tabela
 
-    return enzimas_restricao_presentes
