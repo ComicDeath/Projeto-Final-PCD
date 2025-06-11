@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 from contagem_de_bases import calcular_gc, calcular_at
 from tkinter import filedialog
-from bibliotecas import enzimas, codigo_genetico
+from bibliotecas import enzimas, codigo_genetico, antibioticos, genes_resistencia
 
 #VAR GLOBAL DA SEQUENCIA (MEGA HIPER IMPORTANTE)
 sequencia = ""
@@ -164,8 +164,6 @@ def reconhece_proteinas(sequencia):
         proteinas[posicao] = prot
 
     return proteinas
-
-from bibliotecas import antibioticos, genes_resistencia
 
 #Função para identificar os genes de resistencia e sua posição no genoma
 def identifica_genes_resistencia(sequencia_de_bases):
