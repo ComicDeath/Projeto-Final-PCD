@@ -14,16 +14,17 @@ def sequenciaVar(caminho):
     except Exception as e:
         print(f"Erro ao ler a sequência do arquivo: {e}")
         sequencia = ""
+
 def capturaDados(entrada, resultado): 
-    sequencia = entrada.get().strip().replace("\n","").replace(" ","").replace(",","").replace(".","").replace(";","").replace("?","").upper()
+    sequencia_crua = entrada.get().strip().replace("\n","").replace(" ","").replace(",","").replace(".","").replace(";","").replace("?","").upper()
     valido = True
     bases_esperadas = ["A","T","C","G"]
     bases_rna = ["A", "U", "C", "G"]
-    for letra in sequencia:
+    for letra in sequencia_crua:
         if letra not in bases_esperadas and letra not in bases_rna:
             valido = False
             break
-    
+
     intervalo = 80
     pedacos = []
     for i in range(0, len(sequencia_crua), intervalo):
@@ -44,7 +45,7 @@ def capturaDados(entrada, resultado):
         saida = "Base inesperada identificada. Revise a sua sequência."
     resultado.config(text=saida)
 
-    total = len(sequencia)
+    sequenciaVar("assets/sequencia.txt")
 
 def carregaArquivo(entrada):
     path = filedialog.askopenfilename(
