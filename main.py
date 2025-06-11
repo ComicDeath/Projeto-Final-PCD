@@ -152,8 +152,8 @@ def reconhece_proteinas(sequencia):
                 if trinca in codons:
                     if aa == 'STOP':
                         break
-                    proteina.append(aa)
+                    prot.append(aa)
                     break
-        proteinas[inicio] = proteina
+        proteinas[posicao] = prot
 
     return proteinas
