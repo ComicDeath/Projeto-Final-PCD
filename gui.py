@@ -15,7 +15,6 @@ def gif(label, ind=0):
     frame = frames[ind]
     ind = (ind + 1) % frameCnt
     label.config(image=frame)
-    label.image = frame
     janela.after(12, gif, label, ind)
 
 linha = tk.Frame(janela)

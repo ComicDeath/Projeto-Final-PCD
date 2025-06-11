@@ -82,10 +82,6 @@ def gera_fita_complementar(sequencia):
 
     return ''.join(fita_complementar)
 
-def calcular_gc(sequencia):
-    gc = sequencia.count("G") + sequencia.count("C")
-    return gc
-
 def Temperatura_Melting(sequencia):
     gc = calcular_gc(sequencia)
     total = len(sequencia)
@@ -115,7 +111,7 @@ def grafico_cg_at(entrada, resultado):
         percentuais = [calcular_gc(sequencia), calcular_at(sequencia)]
         pares = ["GC", "AT"]
 
-    #código do gráfico
-    plt.pie(percentuais, labels = pares, autopct = '%1.1f%%')
-    plt.title("Conteúdo GC vs AT")
-    plt.show()
+        #código do gráfico
+        plt.pie(percentuais, labels = pares, autopct = '%1.1f%%')
+        plt.title("Conteúdo GC vs AT")
+        plt.show()
