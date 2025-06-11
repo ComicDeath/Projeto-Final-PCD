@@ -14,24 +14,23 @@ def sequenciaVar(caminho):
     except Exception as e:
         print(f"Erro ao ler a sequência do arquivo: {e}")
         sequencia = ""
-
 def capturaDados(entrada, resultado): 
-    sequencia_crua = entrada.get().strip().replace("\n","").replace(" ","").replace(",","").replace(".","").replace(";","").replace("?","").upper()
+    sequencia = entrada.get().strip().replace("\n","").replace(" ","").replace(",","").replace(".","").replace(";","").replace("?","").upper()
     valido = True
     bases_esperadas = ["A","T","C","G"]
-    for letra in sequencia_crua:
+    for letra in sequencia:
         if letra not in bases_esperadas:
             valido = False
             break
     if valido is True:
         with open("assets/sequencia.txt", "w") as f:
-            f.write(sequencia_crua)
-            saida = f"Sequência armazenada: {sequencia_crua}"
+            f.write(sequencia)
+            saida = f"Sequência armazenada: {sequencia}"
     else:
         saida = "Base inesperada identificada. Revise a sua sequência."
     resultado.config(text=saida)
 
-    sequenciaVar("assets/sequencia.txt")
+    total = len(sequencia)
 
 def carregaArquivo(entrada):
     path = filedialog.askopenfilename(
@@ -67,6 +66,10 @@ def gera_fita_complementar(sequencia):
         fita_complementar.append(complementares[base])
 
     return ''.join(fita_complementar)
+
+def calcular_gc(sequencia):
+    gc = sequencia.count("G") + sequencia.count("C")
+    return gc
 
 def Temperatura_Melting(sequencia):
     gc = calcular_gc(sequencia)
