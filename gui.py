@@ -1,5 +1,5 @@
 import tkinter as tk
-from main import capturaDados, carregaArquivo
+from main import capturaDados, carregaArquivo, grafico_cg_at
 
 janela = tk.Tk()
 janela.title("Plasmid Computer Decoder")
@@ -43,6 +43,14 @@ icone_pasta.pack(side=tk.LEFT, padx=5)
 
 botao = tk.Button(janela, text="Iniciar", command=lambda: capturaDados(entrada, resultado))
 botao.pack(pady=5)
+
+#PRIMEIRA LINHA DE BOTOES
+
+linha_botoes_1 = tk.Frame(janela)
+linha_botoes_1.pack(pady=10)
+
+botao_graficos = tk.Button(linha_botoes_1, text="Grafico", command=lambda: grafico_cg_at(entrada.get()))
+botao_graficos.pack(side=tk.LEFT, padx=10, pady=10)
 
 resultado = tk.Label(janela, text="", font=("Arial", 12))
 resultado.pack(pady=20)

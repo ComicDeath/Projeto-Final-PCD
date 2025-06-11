@@ -1,24 +1,37 @@
 import tkinter as tk
+import matplotlib.pyplot as plt
+from contagem_de_bases import calcular_gc, calcular_at
 from tkinter import filedialog
 from bibliotecas import enzimas
 
+#VAR GLOBAL DA SEQUENCIA (MEGA HIPER IMPORTANTE)
+sequencia = ""
+def sequenciaVar(caminho):
+    global sequencia
+    try:
+        with open(caminho, 'r', encoding='utf-8') as f:
+            sequencia = f.read()
+    except Exception as e:
+        print(f"Erro ao ler a sequência do arquivo: {e}")
+        sequencia = ""
+
 def capturaDados(entrada, resultado): 
-    sequencia = entrada.get().strip().replace("\n","").replace(" ","").replace(",","").replace(".","").replace(";","").replace("?","").upper()
+    sequencia_crua = entrada.get().strip().replace("\n","").replace(" ","").replace(",","").replace(".","").replace(";","").replace("?","").upper()
     valido = True
     bases_esperadas = ["A","T","C","G"]
-    for letra in sequencia:
+    for letra in sequencia_crua:
         if letra not in bases_esperadas:
             valido = False
             break
     if valido is True:
         with open("assets/sequencia.txt", "w") as f:
-            f.write(sequencia)
-            saida = f"Sequência armazenada: {sequencia}"
+            f.write(sequencia_crua)
+            saida = f"Sequência armazenada: {sequencia_crua}"
     else:
         saida = "Base inesperada identificada. Revise a sua sequência."
     resultado.config(text=saida)
 
-    total = len(sequencia)
+    sequenciaVar("assets/sequencia.txt")
 
 def carregaArquivo(entrada):
     path = filedialog.askopenfilename(
@@ -55,10 +68,6 @@ def gera_fita_complementar(sequencia):
 
     return ''.join(fita_complementar)
 
-def calcular_gc(sequencia):
-    gc = sequencia.count("G") + sequencia.count("C")
-    return gc
-
 def Temperatura_Melting(sequencia):
     gc = calcular_gc(sequencia)
     total = len(sequencia)
@@ -79,3 +88,15 @@ def enzimas_de_restricao(sequencia):
         enzimas_restricao_tabela += f"\n{enzima}\t{frequencia}"
     return enzimas_restricao_tabela
 
+def grafico_cg_at(sequencia): 
+    print(sequencia)
+    plt.close()
+    #rotulos
+    percentuais = [calcular_gc(sequencia), calcular_at(sequencia)]
+    print(calcular_gc(sequencia), "----", calcular_at(sequencia))
+    pares = ["GC", "AT"]
+
+    #código do gráfico
+    plt.pie(percentuais, labels = pares, autopct = '%1.1f%%')
+    plt.title("Conteúdo GC vs AT")
+    plt.show()
