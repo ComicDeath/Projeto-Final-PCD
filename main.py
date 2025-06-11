@@ -35,18 +35,17 @@ def capturaDados(entrada, resultado):
         sequencia_visualizacao = "\n".join(pedacos)
     
     if valido is True:
-        if "U" in sequencia_crua:
-            sequencia_crua = sequencia_crua.replace("U", "T")
-            sequencia_visualizacao = sequencia_visualizacao.replace("U", "T")
-            with open("assets/sequencia.txt", "w") as f:
-                f.write(sequencia_crua)
-            saida = f"Sequência de RNA identificada e armazenada como sequência de DNA:\n {sequencia_visualizacao}"
-        else:
-            with open("assets/sequencia.txt", "w") as f:
-                f.write(sequencia_crua)
-            saida = f"Sequência de DNA armazenada:\n {sequencia_visualizacao}"
+        with open("assets/sequencia.txt", "w") as f:
+            f.write(sequencia_crua)
+            saida = f"Sequência armazenada: {sequencia_crua}"
     else:
-        saida = "Sequência inválida."
+        with open("assets/sequencia.txt", "w") as f:
+            f.write("")
+            saida = "Sequência inválida."
+            resultado.config(text=saida)
+            sequenciaVar("assets/sequencia.txt")
+            return "Erro"
+        
     resultado.config(text=saida)
 
     sequenciaVar("assets/sequencia.txt")
@@ -110,29 +109,16 @@ def enzimas_de_restricao(sequencia):
         enzimas_restricao_tabela += f"\n{enzima}\t{frequencia}"
     return enzimas_restricao_tabela
 
-def grafico_cg_at(sequencia): 
-    plt.close()
-    #rotulos
-    percentuais = [calcular_gc(sequencia), calcular_at(sequencia)]
-    pares = ["GC", "AT"]
+def grafico_cg_at(entrada, resultado): 
+    capturaDados(entrada, resultado)
+    if capturaDados(entrada, resultado) != "Erro":
+        plt.close()
+        
+        #rotulos
+        percentuais = [calcular_gc(sequencia), calcular_at(sequencia)]
+        pares = ["GC", "AT"]
 
     #código do gráfico
     plt.pie(percentuais, labels = pares, autopct = '%1.1f%%')
     plt.title("Conteúdo GC vs AT")
     plt.show()
-    
-def reconhece_codons(sequencia):
-    stop_codons = ['TAA', 'TAG', 'TGA']
-    traduzidos = {}
-    for i in range(len(sequencia) - 2):
-        if sequencia[i:i+3] == 'ATG':
-            codons = []
-            for j in range(i, len(sequencia) - 2, 3):
-                trinca = sequencia[j:j+3]
-                codons.append(trinca)
-                if trinca in stop_codons:
-                    traduzidos[i+1] = codons
-                    break
-
-
-    return traduzidos
