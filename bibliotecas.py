@@ -5,10 +5,19 @@ enzimas = {
     'PstI' : 'CTGCAG',
     'XhoI' : 'CTCGAG',
     'SalI' : 'GTCGAC',
-    'SmaI' : 'CCCGGG',
+    'SmaI / blunt' : 'CCCGGG',
     'NotI' : 'GCGGCCGC',
     'NdeI' : 'CATATG',
     'NcoI' : 'CCATGG',
+    'ApaI' : 'GGGCCC',
+    'KpnI' : 'GGTACC',
+    'SacI' : 'GAGCTC',
+    'SpeI' : 'ACTAGT',
+    'XbaI' : 'TCTAGA',
+    'BglII' : 'AGATCT',
+    'ClaI' :   'ATCGAT',
+    'EcoRV / Blunt' : 'GATATC',
+    'PvuII / Blunt' : 'CAGCT',
 }
 
 bla = '''ATGAGTATTCAACATTTCCGTGTCGCCCTTATTCCCTTTTTTGCGGCATTTTGCCTTCCTGTTTTTGCTCACCCAGAACG
@@ -32,7 +41,7 @@ GGTGAAGCGGTGACGAGGTGATGTATCAGGGGTATCGTCAGGTGATGATTTGACGTCACGGTTGGAAGTGGAAATTGCTC
 TTGTGGTCTGGTAGTAGTTTGTAATAGTTGTGCGCAGCCTGAAGCGAA'''
 
 genes_resistencia = {
-    bla : 'B-Lactamase',
+    bla : 'Ampicilina',
     nptII : 'Kanamicina',
     cat : 'Clorafenicol',
 }
