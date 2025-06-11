@@ -19,14 +19,22 @@ def capturaDados(entrada, resultado):
     sequencia_crua = entrada.get().strip().replace("\n","").replace(" ","").replace(",","").replace(".","").replace(";","").replace("?","").upper()
     valido = True
     bases_esperadas = ["A","T","C","G"]
+    bases_rna = ["A", "U", "C", "G"]
     for letra in sequencia_crua:
-        if letra not in bases_esperadas:
+        if letra not in bases_esperadas and letra not in bases_rna:
             valido = False
             break
+
+    intervalo = 80
+    pedacos = []
+    for i in range(0, len(sequencia_crua), intervalo):
+        pedacos.append(sequencia_crua[i:i+intervalo])
+        sequencia_visualizacao = "\n".join(pedacos)
+    
     if valido is True:
         with open("assets/sequencia.txt", "w") as f:
             f.write(sequencia_crua)
-            saida = f"Sequência armazenada: {sequencia_crua}"            
+            saida = f"Sequência armazenada: {sequencia_crua}"
     else:
         with open("assets/sequencia.txt", "w") as f:
             f.write("")
@@ -74,6 +82,10 @@ def gera_fita_complementar(sequencia):
 
     return ''.join(fita_complementar)
 
+def calcular_gc(sequencia):
+    gc = sequencia.count("G") + sequencia.count("C")
+    return gc
+
 def Temperatura_Melting(sequencia):
     gc = calcular_gc(sequencia)
     total = len(sequencia)
@@ -103,7 +115,7 @@ def grafico_cg_at(entrada, resultado):
         percentuais = [calcular_gc(sequencia), calcular_at(sequencia)]
         pares = ["GC", "AT"]
 
-        #código do gráfico
-        plt.pie(percentuais, labels = pares, autopct = '%1.1f%%')
-        plt.title("Conteúdo GC vs AT")
-        plt.show()
+    #código do gráfico
+    plt.pie(percentuais, labels = pares, autopct = '%1.1f%%')
+    plt.title("Conteúdo GC vs AT")
+    plt.show()
