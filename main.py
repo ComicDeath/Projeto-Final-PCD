@@ -197,4 +197,11 @@ def identifica_genes_resistencia(entrada, resultado):
     #Caso nenhum gene seja encontrado retorna a frase abaixo.
     else:
         resultado.config(text="No seu plasmídio não há genes de resistência")
+
+
+#REFERÊNCIAS
+
+#ALBERTS, Bruce et al. Biologia Molecular da Célula. 6. ed. Porto Alegre: ArtMed, 2017. p. 467-469.
+
+#ALBERTS, Bruce et al. Biologia Molecular da Célula. 6. ed. Porto Alegre: ArtMed, 2017.  p. 483-484.
     
