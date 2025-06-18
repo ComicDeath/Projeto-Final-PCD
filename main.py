@@ -1,7 +1,7 @@
 import tkinter as tk
 import matplotlib.pyplot as plt
 import os
-from contagem_de_bases import calcular_gc, calcular_at
+from contagem_de_bases import calcular_gc, calcular_at, conta_A, conta_G, conta_T, conta_C
 from tkinter import filedialog
 from bibliotecas import *
 
