@@ -114,7 +114,6 @@ def enzimas_de_restricao(entrada, resultado):
             enzimas_restricao_lista.append(nome_enzima)
             if nome_enzima not in enzimas_restricao_presentes.keys():
                 enzimas_restricao_presentes[nome_enzima] = sequencia.count(seq_enzima)
-    # em tabela - fazer uma mais bonitinha?
     enzimas_restricao_tabela = "Enzima\tFrequência"
     for enzima, frequencia in enzimas_restricao_presentes.items():
         enzimas_restricao_tabela += f"\n{enzima}\t{frequencia}"
@@ -201,7 +200,7 @@ def identifica_genes_resistencia(sequencia_de_bases):
 
 def graficobarras(entrada, resultado):
     nome_das_bases = ["Adenina", "Guanina", "Timina", "Citosina"]
-    lista_de_quantidades = [conta_A, conta_G, conta_T, conta_C]
+    lista_de_quantidades = [conta_A(sequencia), conta_G(sequencia), conta_T(sequencia), conta_C(sequencia)]
     if capturaDados(entrada, resultado) != "Erro":
         plt.close()
 
