@@ -147,7 +147,8 @@ def grafico_cg_at(entrada, resultado):
         plt.title("Conteúdo GC vs AT")
         plt.show()
 
-def reconhece_proteinas(sequencia):
+def reconhece_proteinas(entrada, resultado):
+    capturaDados(entrada, resultado)
     stop_codons = ['TAA', 'TAG', 'TGA']
     traduzidos = {}
 
@@ -177,8 +178,15 @@ def reconhece_proteinas(sequencia):
                     prot.append(aa)
                     break
         proteinas[posicao] = prot
+    if proteinas:
+        with open("arquivos de saída\\aminoacidos.txt", "w") as f:
+            f.write(str(proteinas))
+        os.startfile("arquivos de saída\\aminoacidos.txt")
 
-    return proteinas
+    else: 
+        resultado.config(text="Não foi identificada proteínas na sequência")
+
+
 
 #Função para identificar os genes de resistencia e sua posição no genoma
 def identifica_genes_resistencia(entrada, resultado):

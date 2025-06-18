@@ -1,0 +1,1 @@
+{331: ['Metionina', 'Glicina', 'Leucina', 'Leucina', 'Cisteína', 'Ácido aspártico']}

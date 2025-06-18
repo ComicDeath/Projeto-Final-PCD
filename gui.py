@@ -1,5 +1,5 @@
 import tkinter as tk
-from main import capturaDados, carregaArquivo, grafico_cg_at, enzimas_de_restricao, identifica_genes_resistencia, temperatura_melting, graficobarras
+from main import capturaDados, carregaArquivo, grafico_cg_at, enzimas_de_restricao, identifica_genes_resistencia, temperatura_melting, graficobarras, reconhece_proteinas
 
 janela = tk.Tk()
 janela.title("Plasmid Computer Decoder")
@@ -60,7 +60,7 @@ botao_gene_de_resistencia = tk.Button(linha_botoes_2, text="Gene de resistência
 botao_gene_de_resistencia.pack(side=tk.LEFT, padx=10, pady=10)
 
 botao_temperatura_melting = tk.Button(linha_botoes_2, text="Temperatura de melting", command=lambda: temperatura_melting(entrada.get(), resultado))
-botao_temperatura_melting.pack(side=tk.LEFT, padx=10, pady=10)
+botao_temperatura_melting.pack(side=tk.RIGHT, padx=10, pady=10)
 
 #TERCEIRA LINHA DE BOTÕES
 
@@ -70,7 +70,8 @@ linha_botoes_3.pack(pady=10)
 botao_grafico_barras = tk.Button(linha_botoes_3, text="Gráfico quantidade de bases", command=lambda: graficobarras(entrada, resultado))
 botao_grafico_barras.pack(side=tk.LEFT, padx=10, pady=10)
 
-botao_proteinas = tk.Button(linha_botoes_3, text="Identifica proteínas")
+botao_proteinas = tk.Button(linha_botoes_3, text="Identifica proteínas", command=lambda: reconhece_proteinas(entrada, resultado) )
+botao_proteinas.pack(side=tk.RIGHT, padx=10, pady=10)
 
 resultado = tk.Label(janela, text="", font=("Arial", 12))
 resultado.pack(pady=20)
