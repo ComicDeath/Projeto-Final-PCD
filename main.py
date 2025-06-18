@@ -96,11 +96,12 @@ def gera_fita_complementar(sequencia):
 
     return ''.join(fita_complementar)
 
-def Temperatura_Melting(sequencia):
+def temperatura_melting(sequencia, resultado):
     gc = calcular_gc(sequencia)
     total = len(sequencia)
     melting = 64.9 + 41 * (gc- 16.4) / total
-    return melting
+    resultado.config(text=f"Temperatura de melting: {melting} °C")
+    return resultado
 
 def enzimas_de_restricao(entrada, resultado):
     capturaDados(entrada, resultado)
