@@ -59,7 +59,7 @@ linha_botoes_2.pack(pady=10)
 botao_gene_de_resistencia = tk.Button(linha_botoes_2, text="Gene de resistência", command=lambda: identifica_genes_resistencia(entrada, resultado))
 botao_gene_de_resistencia.pack(side=tk.LEFT, padx=10, pady=10)
 
-botao_temperatura_melting = tk.Button(linha_botoes_2, text="Temperatura de melting", command=lambda: temperatura_melting(entrada.get(), resultado))
+botao_temperatura_melting = tk.Button(linha_botoes_2, text="Temperatura de melting", command=lambda: temperatura_melting(entrada, resultado))
 botao_temperatura_melting.pack(side=tk.RIGHT, padx=10, pady=10)
 
 #TERCEIRA LINHA DE BOTÕES
