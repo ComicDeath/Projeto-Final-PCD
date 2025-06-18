@@ -209,7 +209,8 @@ def graficobarras(entrada, resultado):
 
         plt.figure(dpi=100)
 
-        plt.bar(nome_das_bases, lista_de_quantidades, width=0.8)
+        plt.bar(nome_das_bases, lista_de_quantidades, color='rebeccapurple', width=0.6)
+        plt.ylim(bottom=0)
 
         plt.title('Quantidade de cada base')
         plt.xlabel('Bases nitrogenadas')
