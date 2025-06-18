@@ -1,1 +1,0 @@
-Gene cat encontrado na posição 0, tamanho do gene de resistência: 368, antibiótico: Clorafenicol 
