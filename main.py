@@ -105,7 +105,7 @@ def temperatura_melting(sequencia, resultado):
 
 def enzimas_de_restricao(entrada, resultado):
     capturaDados(entrada, resultado)
-    with open("assets\\enzima_de_restricao.txt", "w") as f:
+    with open("arquivos de saída\\enzima_de_restricao.txt", "w") as f:
             f.write("")
     enzimas_restricao_presentes = {}
     enzimas_restricao_lista = []
@@ -119,9 +119,9 @@ def enzimas_de_restricao(entrada, resultado):
     for enzima, frequencia in enzimas_restricao_presentes.items():
         enzimas_restricao_tabela += f"\n{enzima}\t{frequencia}"
 
-    with open("assets\\enzima_de_restricao.txt", "w") as f:
+    with open("arquivos de saída\\enzima_de_restricao.txt", "w") as f:
             f.write(enzimas_restricao_tabela)
-    os.startfile("assets\\enzima_de_restricao.txt")
+    os.startfile("arquivos de saída\\enzima_de_restricao.txt")
 
 def grafico_cg_at(entrada, resultado): 
     capturaDados(entrada, resultado)
