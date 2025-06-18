@@ -225,18 +225,18 @@ def identifica_genes_resistencia(entrada, resultado):
         resultado.config(text="No seu plasmídeo não há genes de resistência")
 
 def graficobarras(entrada, resultado):
-    nome_das_bases = ["Adenina", "Guanina", "Timina", "Citosina"]
-    lista_de_quantidades = [conta_A(sequencia), conta_G(sequencia), conta_T(sequencia), conta_C(sequencia)]
-    if capturaDados(entrada, resultado) != "Erro":
-        plt.close()
+        if capturaDados(entrada, resultado) != "Erro":
+            nome_das_bases = ["Adenina", "Guanina", "Timina", "Citosina"]
+            lista_de_quantidades = [conta_A(sequencia), conta_G(sequencia), conta_T(sequencia), conta_C(sequencia)]
+            plt.close()
 
-        plt.figure(dpi=100)
+            plt.figure(dpi=100)
 
-        plt.bar(nome_das_bases, lista_de_quantidades, color='rebeccapurple', width=0.6)
-        plt.ylim(bottom=0)
+            plt.bar(nome_das_bases, lista_de_quantidades, color='rebeccapurple', width=0.6)
+            plt.ylim(bottom=0)
 
-        plt.title('Quantidade de cada base')
-        plt.xlabel('Bases nitrogenadas')
-        plt.ylabel('Número de bases')
+            plt.title('Quantidade de cada base')
+            plt.xlabel('Bases nitrogenadas')
+            plt.ylabel('Número de bases')
 
-        plt.show()
+            plt.show()
