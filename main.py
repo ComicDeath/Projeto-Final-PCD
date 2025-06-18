@@ -167,10 +167,11 @@ def reconhece_proteinas(sequencia):
     return proteinas
 
 #Função para identificar os genes de resistencia e sua posição no genoma
-def identifica_genes_resistencia(sequencia_de_bases):
+def identifica_genes_resistencia(entrada, resultado):
+    capturaDados(entrada, resultado)
 
     #O replace é para garantir que não terão espaos atrapalhando
-    sequencia_de_bases = sequencia_de_bases.replace('\n', '')
+    sequencia_de_bases = sequencia.replace('\n', '')
     resultados = []
 
     #O for navega pelos itens do gene_resistencia da biblioteca
@@ -193,7 +194,9 @@ def identifica_genes_resistencia(sequencia_de_bases):
 
     # Testa se a lista resultados não está vazia indicando que um gene foi encontrado.
     if resultados:
-        return resultados
+        with open("arquivos de saída\\gene_de_resistencia.txt", "w") as f:
+            f.write(str(resultados))
+        os.startfile("arquivos de saída\\gene_de_resistencia.txt")
     
     #Caso nenhum gene seja encontrado retorna a frase abaixo.
     else:
