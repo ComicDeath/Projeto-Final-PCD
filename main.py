@@ -7,6 +7,10 @@ from bibliotecas import *
 
 #VAR GLOBAL DA SEQUENCIA (MEGA HIPER IMPORTANTE)
 sequencia = ""
+
+
+#Essa função lê o que está escrito no arquivo que está em seu parâmetro e salva na var global "sequencia"
+#É usado na função capturaDados para sempre atualizar a var "sequencia"
 def sequenciaVar(caminho):
     global sequencia
     try:
@@ -16,6 +20,9 @@ def sequenciaVar(caminho):
         print(f"Erro ao ler a sequência do arquivo: {e}")
         sequencia = ""
 
+
+#Essa função a sequência que está no campo de entrada da interface no arquivo asset sequencia.txt
+#Em seguida, a função "sequenciaVar" atualiza a var global "sequencia"
 def capturaDados(entrada, resultado): 
     sequencia_crua = entrada.get().strip().replace("\n","").replace(" ","").replace(",","").replace(".","").replace(";","").replace("?","").upper()
     valido = True
@@ -61,6 +68,8 @@ def capturaDados(entrada, resultado):
 
     sequenciaVar("assets/sequencia.txt")
 
+
+#Essa função serve para carregar um arquivo .txt ou .fasta direto para a caixa de entrada
 def carregaArquivo(entrada):
     path = filedialog.askopenfilename(
         title="Selecione o arquivo: ",
@@ -81,6 +90,8 @@ def carregaArquivo(entrada):
             entrada.delete(0, tk.END)
             entrada.insert(0, content)
     
+
+
 def gera_fita_complementar(sequencia):
     complementares = {
         'A' : 'T',
