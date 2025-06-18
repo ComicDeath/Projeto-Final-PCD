@@ -199,7 +199,7 @@ def identifica_genes_resistencia(entrada, resultado):
     
     #Caso nenhum gene seja encontrado retorna a frase abaixo.
     else:
-        resultados.config(text="No seu plasmídeo não há genes de resistência")
+        resultado.config(text="No seu plasmídeo não há genes de resistência")
 
 def graficobarras(entrada, resultado):
     nome_das_bases = ["Adenina", "Guanina", "Timina", "Citosina"]

@@ -1,0 +1,1 @@
+[{'gene': 'cat', 'posicao': 0, 'tamanho': 368, 'antibiotico': 'Clorafenicol'}]
