@@ -3,7 +3,7 @@ from main import capturaDados, carregaArquivo, grafico_cg_at, enzimas_de_restric
 
 janela = tk.Tk()
 janela.title("Plasmid Computer Decoder")
-janela.geometry("500x300")
+janela.geometry("1920x1080")
 
 imagem_pasta = tk.PhotoImage(file="assets/folder_true.png")
 imagem_pasta = imagem_pasta.subsample(14, 14)
