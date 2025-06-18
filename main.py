@@ -151,15 +151,19 @@ def reconhece_proteinas(sequencia):
     stop_codons = ['TAA', 'TAG', 'TGA']
     traduzidos = {}
 
-    for i in range(len(sequencia) - 2):
-        if sequencia[i:i+3] == 'ATG':
-            codons = []
-            for j in range(i, len(sequencia) - 2, 3):
-                trinca = sequencia[j:j+3]
-                codons.append(trinca)
-                if trinca in stop_codons:
-                    traduzidos[i+1] = codons  
-                    break
+    for i in range(len(sequencia) - 12):  
+        if sequencia[i:i+6] == 'AGGAGG':
+            
+            for j in range(i + 6, i + 16):
+                if sequencia[j:j+3] == 'ATG':
+                    codons = []
+                    for k in range(j, len(sequencia)-2, 3):
+                        trinca = sequencia[k:k+3]
+                        codons.append(trinca)
+                        if trinca in stop_codons:
+                            traduzidos[j+1] = codons  
+                            break
+                    break 
 
     # Traduzir códons para aminoácidos
     proteinas = {}
