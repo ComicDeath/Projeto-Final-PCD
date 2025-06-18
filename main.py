@@ -144,7 +144,8 @@ def grafico_cg_at(entrada, resultado):
         pares = ["GC", "AT"]
 
         #código do gráfico
-        plt.pie(percentuais, labels = pares, autopct = '%1.1f%%')
+        cores = ['rebeccapurple','darkorange']
+        plt.pie(percentuais, labels = pares, colors=cores, autopct = '%1.1f%%')
         plt.title("Conteúdo GC vs AT")
         plt.show()
 
