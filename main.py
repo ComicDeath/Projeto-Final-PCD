@@ -197,4 +197,5 @@ def identifica_genes_resistencia(sequencia_de_bases):
     
     #Caso nenhum gene seja encontrado retorna a frase abaixo.
     else:
-        return "No seu plasmídio não há genes de resistência"
+        resultado.config(text="No seu plasmídio não há genes de resistência")
+    
