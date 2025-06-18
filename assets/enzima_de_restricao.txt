@@ -1,13 +1,2 @@
-Enzima	Frequência
-BamHI	9
-HindIII	1
-XhoI	11
-SalI	14
-SmaI / blunt	4
-NotI	31
-NcoI	11
-ApaI	3
-SacI	9
-ClaI	4
-EcoRV / Blunt	5
-PvuII / Blunt	67
+Enzima	Frequï¿½ncia
+ClaI	1
