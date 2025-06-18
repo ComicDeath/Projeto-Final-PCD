@@ -207,7 +207,7 @@ def graficobarras(entrada, resultado):
     if capturaDados(entrada, resultado) != "Erro":
         plt.close()
 
-        plt.figure(dpi=240)
+        plt.figure(dpi=100)
 
         plt.bar(nome_das_bases, lista_de_quantidades, width=0.8)
 
