@@ -174,3 +174,6 @@ cython_debug/
 .pypirc
 assets/sequencia.txt
 assets/sequencia.txt
+assets/gene_de_resistencia.txt
+assets/enzima_de_restricao.txt
+assets/sequencia.txt
