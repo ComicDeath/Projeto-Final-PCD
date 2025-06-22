@@ -1,7 +1,5 @@
-TRABALHO EM PROGRESSO JURO
-
 # PCD - Plasmid Computer Decoder
-O projeto PCD (Plasmid Computer Decoder) recebe uma sequência de DNA ou RNA plasmidial inserida pelo usuário ou carregada via arquivo FASTA. Com essa sequência, pode-se exercer as seguintes funções:
+O projeto PCD (Plasmid Computer Decoder) foi desenvolvido como projeto final da matéria Práticas em Ciências de Dados por estudantes da Ilum - Escola de Ciências. O PCD recebe uma sequência de DNA ou RNA plasmidial inserida pelo usuário ou carregada via arquivo .FASTA. Com essa sequência, pode-se exercer as seguintes funções:
 ### Temperatura de melting
 Retorna o valor da temperatura de melting em grau Celcius com precisão de uma casa decimal. 
 ### Enzimas de restrição
@@ -14,23 +12,25 @@ Retorna um arquivo .txt com o nome dos genes de resistência identificados, a po
 Retorna um arquivo .txt com os aminoácidos codificados pela sequência.
 
 # Instalação
-?????????????????????
+Para executar o projeto, deve-se clonar esse repositório em sua máquina e abri-lo em uma IDE compatível com Python. Depois, basta abrir e executar o arquivo gui.py para abrir a interface pronta para uso.
 
 # Construído com
-𝓹𝔂𝓽𝓱𝓸𝓷 (já continuo prometo)
+- **Python** - linguagem de programação;
+- **TKinter** - biblioteca para criação da GUI;
+- **MatPlotLib** - biblioteca para criação e visualização de gráficos;
 
 # Integrantes
 O projeto foi desenvolvido por um grupo de estudantes cursando o primeiro semestre do bacharelado em ciência e tecnologia oferecido pela Ilum Escola de Ciências - instituição de ensino superior do CNPEM.
-- **Brenda Laube Abrunhosa** - link para o perfil
-- **Matheus Nascimento Cunha** - link para o perfil
-- **Sarah Santos Silva** - link para o perfil
-- **João Henrique de Lima Gasquez** - link para o perfil
+- [**Brenda Laube Abrunhosa**](https://github.com/blabrunhosa)
+- [**Matheus Nascimento Cunha**](https://github.com/mncunha)
+- [**Sarah Santos Silva**](https://github.com/SarahSantosSilva)
+- [**João Henrique de Lima Gasquez**](https://github.com/ComicDeath)
 
 # Docentes
-O projeto foi o trabalho final para a matéria Práticas em Ciências de Dados, ministrada por:
-- **Profº Dr. Leandro Lemos**
+A matéria Práticas em Ciências de Dados foi ministrada por:
+- **Profº Dr. Leandro Nascimento Lemos**
 - **Profº Dr. Daniel Roberto Cassar**
-- **Profº Dr. James**
+- **Profº Dr. James Moraes de Almeida**
 
 # Licença
-O Cassar pediu para colocar alguma mas não lembro direito!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+????????
