@@ -24,8 +24,13 @@ O projeto foi desenvolvido por um grupo de estudantes cursando o primeiro semest
 - [**Brenda Laube Abrunhosa**](https://github.com/blabrunhosa)
 - [**Matheus Nascimento Cunha**](https://github.com/mncunha)
 - [**Sarah Santos Silva**](https://github.com/SarahSantosSilva)
+  * Contagem de bases
+  * Gráfico de porcentagem de at X gc
+  * Função de gene de restrição
+  * Além disso ajudou o grupo com a organização dos slides e do relatório.
 - [**João Henrique de Lima Gasquez**](https://github.com/ComicDeath)
 
+  
 # Docentes
 A matéria Práticas em Ciências de Dados foi ministrada por:
 - **Profº Dr. Leandro Nascimento Lemos**
