@@ -31,6 +31,12 @@ O projeto foi desenvolvido por um grupo de estudantes cursando o primeiro semest
   * Gráfico de barras;
   * Contribuiu na montagem do README, do relatório e dos slides.
 - [**Matheus Nascimento Cunha**](https://github.com/mncunha)
+  * Função da Temperatura de Melting;
+  * Função da leitura de transcritos e a tradução deles;
+  * Criação do dicionário de genes de resistência;
+  * Criação do grafo do código genético;
+  * Criação do Toy Model para a experimentação;
+  * Auxiliou os demais membros com o conteúdo teórico em biologia.
 - [**Sarah Santos Silva**](https://github.com/SarahSantosSilva)
   * Contagem de bases;
   * Gráfico de porcentagem de at X gc;
