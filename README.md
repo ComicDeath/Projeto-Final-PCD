@@ -1,14 +1,17 @@
-# PCD - Plasmid Computer Decoder
-O projeto PCD (Plasmid Computer Decoder) foi desenvolvido como projeto final da matéria Práticas em Ciências de Dados por estudantes da Ilum - Escola de Ciências. O PCD recebe uma sequência de DNA ou RNA plasmidial inserida pelo usuário ou carregada via arquivo .FASTA. Com essa sequência, pode-se exercer as seguintes funções:
-### Temperatura de melting
+![ILUM, CNPEM, MINISTÉRIO DA EDUCAÇÃO](https://github.com/ComicDeath/Projeto-Final-PCD/blob/main/assets/ilum_colorida.png)
+
+<h1 align="center"> PCD - Plasmid Computer Decoder </h1>
+
+O projeto PCD (Plasmid Computer Decoder) foi desenvolvido como projeto final da matéria Práticas em Ciências de Dados por estudantes da Ilum - Escola de Ciências. O PCD recebe uma sequência de DNA ou RNA plasmidial inserida pelo usuário ou carregada via arquivo .txt ou .FASTA. Com essa sequência, pode-se exercer as seguintes funções:
+### `Temperatura de melting`
 Retorna o valor da temperatura de melting em grau Celcius com precisão de uma casa decimal. 
-### Enzimas de restrição
+### `Enzimas de restrição`
 Retorna um arquivo .txt com o nome e a frequência das enzimas de restrição identificadas.
-### Gráfico dos pares AT e CG
+### `Gráfico dos pares AT e CG`
 Retorna um gráfico de seção com a porcentagem dos pares AT e CG presentes no plasmídeo.
-### Genes de resistência
+### `Genes de resistência`
 Retorna um arquivo .txt com o nome dos genes de resistência identificados, a posição, o tamanho e o antibiótico correspondente.
-### Identificação de proteínas
+### `Identificação de proteínas`
 Retorna um arquivo .txt com os aminoácidos codificados pela sequência.
 
 # Instalação
@@ -38,4 +41,6 @@ A matéria Práticas em Ciências de Dados foi ministrada por:
 - **Profº Dr. James Moraes de Almeida**
 
 # Licença
-????????
+Distribuído sob a licença GNU Generic Public License 3.0, cheque `LICENSE` para mais informações.
+
+![ILUM, CNPEM, MINISTÉRIO DA EDUCAÇÃO](https://github.com/ComicDeath/Projeto-Final-PCD/blob/main/assets/ilum.png)
