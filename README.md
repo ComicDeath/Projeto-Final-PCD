@@ -25,19 +25,24 @@ Para executar o projeto, deve-se clonar esse repositório em sua máquina e abri
 # Integrantes
 O projeto foi desenvolvido por um grupo de estudantes cursando o primeiro semestre do bacharelado em ciência e tecnologia oferecido pela Ilum Escola de Ciências - instituição de ensino superior do CNPEM.
 - [**Brenda Laube Abrunhosa**](https://github.com/blabrunhosa)
+  * Validação da sequência;
+  * Suporte para RNA;
+  * Função das enzimas de restrição;
+  * Gráfico de barras;
+  * Contribuiu na montagem do README, do relatório e dos slides.
 - [**Matheus Nascimento Cunha**](https://github.com/mncunha)
 - [**Sarah Santos Silva**](https://github.com/SarahSantosSilva)
-  * Contagem de bases
-  * Gráfico de porcentagem de at X gc
-  * Função de gene de restrição
+  * Contagem de bases;
+  * Gráfico de porcentagem de at X gc;
+  * Função de gene de restrição;
   * Além disso ajudou o grupo com a organização dos slides e do relatório.
 - [**João Henrique de Lima Gasquez**](https://github.com/ComicDeath)
-  * Construção da interface gráfica
-  * Configuração dos arquivos de saída
-  * Formatação das funções para integração com a interface
-  * Auxiliou os demais membros na utilização do VSCode e do GitHub
-  * Auxiliou os demais membros em erros e dúvidas no código
-  * Contribuiu na montagem do README, slides e relatório
+  * Construção da interface gráfica;
+  * Configuração dos arquivos de saída;
+  * Formatação das funções para integração com a interface;
+  * Auxiliou os demais membros na utilização do VSCode e do GitHub;
+  * Auxiliou os demais membros em erros e dúvidas no código;
+  * Contribuiu na montagem do README, slides e relatório.
   
 
   
