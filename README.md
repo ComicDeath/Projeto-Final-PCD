@@ -32,6 +32,13 @@ O projeto foi desenvolvido por um grupo de estudantes cursando o primeiro semest
   * Função de gene de restrição
   * Além disso ajudou o grupo com a organização dos slides e do relatório.
 - [**João Henrique de Lima Gasquez**](https://github.com/ComicDeath)
+  * Construção da interface gráfica
+  * Configuração dos arquivos de saída
+  * Formatação das funções para integração com a interface
+  * Auxiliou os demais membros na utilização do VSCode e do GitHub
+  * Auxiliou os demais membros em erros e dúvidas no código
+  * Contribuiu na montagem do README, slides e relatório
+  
 
   
 # Docentes
@@ -41,7 +48,7 @@ A matéria Práticas em Ciências de Dados foi ministrada por:
 - **Profº Dr. James Moraes de Almeida**
 
 # Licença
-Distribuído sob a licença GNU Generic Public License 3.0, cheque `LICENSE` para mais informações.
+Distribuído sob a licença GNU General Public License 3.0, cheque `LICENSE` para mais informações.
 
 ## Referências
  ROCKETSEAT. **Como fazer um bom README.** Disponível em: https://blog.rocketseat.com.br/como-fazer-um-bom-readme/. Acesso em: 22 de jun. 2025.
