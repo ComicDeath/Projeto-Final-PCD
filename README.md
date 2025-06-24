@@ -42,7 +42,7 @@ O projeto foi desenvolvido por um grupo de estudantes cursando o primeiro semest
   * Formatação das funções para integração com a interface;
   * Auxiliou os demais membros na utilização do VSCode e do GitHub;
   * Auxiliou os demais membros em erros e dúvidas no código;
-  * Contribuiu na montagem do README, slides e relatório.
+  * Contribuiu na montagem do README, do relatório e dos slides.
   
 
   
