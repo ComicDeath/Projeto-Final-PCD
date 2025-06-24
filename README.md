@@ -43,4 +43,7 @@ A matéria Práticas em Ciências de Dados foi ministrada por:
 # Licença
 Distribuído sob a licença GNU Generic Public License 3.0, cheque `LICENSE` para mais informações.
 
+## Referências
+#### ROCKETSEAT. Como fazer um bom README. Disponível em: https://blog.rocketseat.com.br/como-fazer-um-bom-readme/. Acesso em: 22 de jun. 2025.
+
 ![ILUM, CNPEM, MINISTÉRIO DA EDUCAÇÃO](https://github.com/ComicDeath/Projeto-Final-PCD/blob/main/assets/ilum.png)
