@@ -24,7 +24,7 @@ def sequenciaVar(caminho):
 #Essa função a sequência que está no campo de entrada da interface no arquivo asset sequencia.txt
 #Em seguida, a função "sequenciaVar" atualiza a var global "sequencia"
 def capturaDados(entrada, resultado): 
-    sequencia_crua = entrada.get().strip().replace("\n","").replace(" ","").replace(",","").replace(".","").replace(";","").replace("?","").replace(":","").replace("-","").upper()
+    sequencia_crua = entrada.get().strip().replace("\n","").replace(" ","").replace(",","").replace(".","").replace(";","").replace("?","").replace(":","").replace("-","").replace(">","").replace("<","").upper()
     valido = True
     bases_esperadas = ["A","T","C","G"]
     bases_rna = ["A", "U", "C", "G"]
