@@ -22,6 +22,9 @@ Para executar o projeto, deve-se clonar esse repositório em sua máquina e abri
 - **TKinter** - biblioteca para criação da GUI;
 - **MatPlotLib** - biblioteca para criação e visualização de gráficos;
 
+# Informações adicionais
+Para mais informações sobre as funções imbutidas e usos do software, consulte o pdf anexado `PCD - Atividade Final`.
+
 # Integrantes
 O projeto foi desenvolvido por um grupo de estudantes cursando o primeiro semestre do bacharelado em ciência e tecnologia oferecido pela Ilum Escola de Ciências - instituição de ensino superior do CNPEM.
 - [**Brenda Laube Abrunhosa**](https://github.com/blabrunhosa)
@@ -50,8 +53,6 @@ O projeto foi desenvolvido por um grupo de estudantes cursando o primeiro semest
   * Auxiliou os demais membros em erros e dúvidas no código;
   * Contribuiu na montagem do README, do relatório e dos slides.
   
-
-  
 # Docentes
 A matéria Práticas em Ciências de Dados foi ministrada por:
 - **Profº Dr. Leandro Nascimento Lemos**
@@ -61,7 +62,7 @@ A matéria Práticas em Ciências de Dados foi ministrada por:
 # Licença
 Distribuído sob a licença GNU General Public License 3.0, cheque `LICENSE` para mais informações.
 
-## Referências
+## Referências para a construção do README
  ROCKETSEAT. **Como fazer um bom README.** Disponível em: https://blog.rocketseat.com.br/como-fazer-um-bom-readme/. Acesso em: 22 de jun. 2025.
 
 ![ILUM, CNPEM, MINISTÉRIO DA EDUCAÇÃO](https://github.com/ComicDeath/Projeto-Final-PCD/blob/main/assets/ilum.png)
